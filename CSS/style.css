@@ -1,0 +1,143 @@
+/* ========= GLOBAL RESET ========= */
+/* this makes sure all browsers start clean with no weird extra spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========= UNIVERSAL WATERMARK ========= */
+body::before {
+  content: ""; /* fake layer for watermark */
+  position: fixed; /* it doesn’t move when we scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* the watermark image */
+  background-image: url("../Assets/bgpicture.webp"); /* put your NGO logo/pic here */
+  background-repeat: no-repeat; /* only one image */
+  background-position: center; /* stays in the middle */
+  background-size: contain; /* keeps its original look, no stretching */
+
+  opacity: 0.1; /* very faint so text is easy to read */
+  z-index: -1; /* sends it behind everything else */
+}
+
+/* ========= BASE STYLING ========= */
+body {
+  font-family: "Verdana", sans-serif; /* normal text font */
+  line-height: 1.6; /* nice spacing */
+  background-color: #f4f4f9; /* fallback background */
+  color: #333; /* dark text */
+  margin: 0;
+}
+
+/* headings */
+h1, h2, h3 {
+  font-family: "Georgia", serif; /* fancy font */
+  margin-bottom: 15px;
+  color: #2c3e50; /* dark blue */
+}
+
+/* normal text */
+p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+/* links */
+a {
+  text-decoration: none;
+  color: #16a085; /* green */
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ========= HEADER & NAV ========= */
+header {
+  background: #2c3e50; /* dark blue bar */
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+header h1 {
+  font-size: 2rem;
+}
+nav {
+  margin-top: 10px;
+}
+nav a {
+  margin: 0 12px;
+  font-weight: bold;
+  color: white;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: #f39c12; /* orange hover */
+}
+
+/* ========= MAIN ========= */
+main {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+main img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin: 20px 0;
+  display: block;
+}
+
+/* ========= FOOTER ========= */
+footer {
+  text-align: center;
+  background-color: #2c3e50;
+  color: white;
+  padding: 15px;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+/* lists */
+ul {
+  list-style-type: square;
+  margin-left: 20px;
+}
+
+/* ========= RESPONSIVE ========= */
+/* tablets */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  nav a {
+    display: inline-block;
+    margin: 5px;
+    font-size: 0.9rem;
+  }
+  main {
+    padding: 15px;
+  }
+}
+/* phones */
+@media (max-width: 480px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  nav a {
+    padding: 8px;
+    background: #34495e;
+    border-radius: 5px;
+  }
+  nav a:hover {
+    background: #16a085;
+    color: white;
+  }
+}
